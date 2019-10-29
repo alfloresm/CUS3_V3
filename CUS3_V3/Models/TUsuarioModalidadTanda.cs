@@ -15,6 +15,7 @@ namespace CUS3_V3.Models
         public int FkIumtCodTan { get; set; }
         public int? IumtPuntajeTotal { get; set; }
         public int? IumtPista { get; set; }
+        public int? IumtEstado { get; set; }
 
         public TUsuarioModalidad FkIumtCodPartNavigation { get; set; }
         public TTanda FkIumtCodTanNavigation { get; set; }

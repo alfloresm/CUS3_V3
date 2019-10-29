@@ -333,6 +333,8 @@ namespace CUS3_V3.Models
 
                 entity.Property(e => e.FkIumtCodTan).HasColumnName("FK_IUMT_CodTan");
 
+                entity.Property(e => e.IumtEstado).HasColumnName("IUMT_Estado");
+
                 entity.Property(e => e.IumtPista).HasColumnName("IUMT_Pista");
 
                 entity.Property(e => e.IumtPuntajeTotal).HasColumnName("IUMT_PuntajeTotal");

@@ -18,6 +18,7 @@
             <label class="control-label">Nº Tanda:</label>
             @*<label class="text-info" name="tanda"></label>*@
             @ViewBag.tanda
+            <input id="tanda" value=@ViewBag.tanda class="form-control" disabled/>
         </div>
         <div class="col-lg-6 col-md-6 col-xs-12">
             <label class="control-label">Descripcion:</label>@ViewBag.tipo
@@ -74,7 +75,7 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="FkVumtCod" class="control-label"></label>
-                        <select asp-for="FkVumtCod" class="form-control" asp-items="ViewBag.FkVumtCod"></select>
+                        <select asp-for="FkVumtCod" class="form-control" asp-items="ViewBag.FkVumtCod" id="codigop"></select>
                     </div>
                     <div class="form-group">
                         <label asp-for="IpPuntaje" class="control-label"></label>
