@@ -30,7 +30,9 @@ namespace CUS3_V3.Controllers
         
         public IActionResult Create()
         {
-            TempData["tanda"] = ViewData["tan"];
+            @ViewBag.tanda=TempData["idt"];
+            @ViewBag.tipo = TempData["desc"];
+            @ViewBag.cat=TempData["desc1"];
             ViewData["FkVumtCod"] = new SelectList(_context.TUsuarioModalidadTanda, "PkVumtCod", "PkVumtCod");
             return View();
         }

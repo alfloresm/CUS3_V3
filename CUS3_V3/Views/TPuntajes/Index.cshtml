@@ -24,13 +24,14 @@
                     <div class="form-group  col-xs-12 col-md-12 col-lg-6">
                         <label class="control-label">Nº Tanda:</label>
                         @*@Html.TextBox("ntanda",ViewData["FK_IUMT_CODTA"])*@
-                        <input asp- class="form-control" placeholder="Tanda" type="number" name="tanda" value=@ViewData["tan"] />
+                        <input id="tanda1" asp- class="form-control" placeholder="Tanda" type="number" name="tanda" value=@ViewData["tan"] />
                         <span class="text-danger"></span>
                     </div>
                     <div class="form-group  col-xs-12 col-md-12 col-lg-6">
                         <hr>
-                        <a asp-action="Create" class="btn btn-block btn-success">CALIFICAR</a>
-
+                        
+                            <a asp-action="Create" class="btn btn-block btn-success">CALIFICAR</a>
+                        
                     </div>
                 </div>
             </form>

@@ -17,11 +17,11 @@
         <div class="col-lg-6 col-md-6 col-xs-12">
             <label class="control-label">Nº Tanda:</label>
             @*<label class="text-info" name="tanda"></label>*@
-            @TempData["tanda"]
+            @ViewBag.tanda
         </div>
         <div class="col-lg-6 col-md-6 col-xs-12">
-            <label class="control-label">Descripcion:</label>
-            <label class="text-info" name="categ"></label>
+            <label class="control-label">Descripcion:</label>@ViewBag.tipo
+            <label class="text-info" name="categ"></label>@ViewBag.cat
         </div>
     </div>
     <hr />

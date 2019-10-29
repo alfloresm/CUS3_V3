@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alexandra\\Desktop\\CUS3_V3\\CUS3_V3\\CUS3_V3.csproj": {}
+    "C:\\Users\\Alexandra\\Source\\CUS3_V3\\CUS3_V3\\CUS3_V3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alexandra\\Desktop\\CUS3_V3\\CUS3_V3\\CUS3_V3.csproj": {
+    "C:\\Users\\Alexandra\\Source\\CUS3_V3\\CUS3_V3\\CUS3_V3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alexandra\\Desktop\\CUS3_V3\\CUS3_V3\\CUS3_V3.csproj",
+        "projectUniqueName": "C:\\Users\\Alexandra\\Source\\CUS3_V3\\CUS3_V3\\CUS3_V3.csproj",
         "projectName": "CUS3_V3",
-        "projectPath": "C:\\Users\\Alexandra\\Desktop\\CUS3_V3\\CUS3_V3\\CUS3_V3.csproj",
+        "projectPath": "C:\\Users\\Alexandra\\Source\\CUS3_V3\\CUS3_V3\\CUS3_V3.csproj",
         "packagesPath": "C:\\Users\\Alexandra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alexandra\\Desktop\\CUS3_V3\\CUS3_V3\\obj\\",
+        "outputPath": "C:\\Users\\Alexandra\\Source\\CUS3_V3\\CUS3_V3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Alexandra\\AppData\\Roaming\\NuGet\\NuGet.Config",

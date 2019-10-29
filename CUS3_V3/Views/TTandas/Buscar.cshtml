@@ -1,0 +1,98 @@
+﻿@model IEnumerable<CUS3_V3.Models.TTanda>
+
+@{
+    ViewData["Title"] = "Buscar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CALIFICAR</h2>
+<div class="row">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div>
+                <h4 class="panel-title">Eleccion de Tanda</h4>
+            </div>
+        </div>
+
+        <div class="panel panel-body form-group">
+          
+                <form asp-action="Buscar">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="row col-xs-12 col-md-12 col-lg-12">
+                        @*ViewData["FK_IUMT_CODTA"]*@
+                        <div class="form-group  col-xs-12 col-md-12 col-lg-6">
+                            <label class="control-label">Nº Tanda:</label>
+                            @Html.TextBox("id")
+
+                            <span class="text-danger"></span>
+                        </div>
+                        <div class="form-group  col-xs-12 col-md-12 col-lg-6">
+                            <hr>
+
+                            <input value="Buscar1" class="btn btn-block btn-success" />
+
+                        </div>
+                    </div>
+                </form>
+            
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VtDescripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VtDescripcion1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItGanador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VtTipoTanda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItEstado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DtFechaHora)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VtDescripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VtDescripcion1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItGanador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VtTipoTanda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItEstado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DtFechaHora)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PkItCodTan">Edit</a> |
+        <a asp-action="Details" asp-route-id="@item.PkItCodTan">Details</a> |
+        <a asp-action="Delete" asp-route-id="@item.PkItCodTan">Delete</a>
+                <a asp-action="BuscarT" asp-route-id="@item.PkItCodTan" class="btn btn-block btn-info glyphicon-check" >Calificar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

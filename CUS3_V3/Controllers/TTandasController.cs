@@ -148,5 +148,45 @@ namespace CUS3_V3.Controllers
         {
             return _context.TTanda.Any(e => e.PkItCodTan == id);
         }
+         public async Task<IActionResult> Buscar()
+        {
+            return View(await _context.TTanda.ToListAsync());
+        }
+        public ActionResult Buscar1(string id)
+        {
+            var tanda = from s in _context.TTanda select s;
+            if(!String.IsNullOrEmpty(id.ToString()))
+            {
+                tanda = tanda.Where(j => j.PkItCodTan.Equals(id));
+            }
+            
+            return View(tanda);
+        }
+
+        public async Task<IActionResult> BuscarT(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var tTanda = await _context.TTanda.FindAsync(id);
+            bool Istandaexist = _context.TTanda.Any
+              (x => x.PkItCodTan == tTanda.PkItCodTan);
+            if (Istandaexist == false)
+            {
+                ModelState.AddModelError("tanda1", "No existe tanda");
+            }
+
+            TempData["idt"] = tTanda.PkItCodTan;
+            TempData["desc"] = tTanda.VtDescripcion;
+            TempData["desc1"] = tTanda.VtDescripcion1;
+            if (tTanda == null)
+            {
+                return NotFound();
+            }
+            
+            //tTanda
+            return RedirectToAction("Create","TPuntajes");
+        }
     }
 }
