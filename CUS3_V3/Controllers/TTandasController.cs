@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -155,9 +156,15 @@ namespace CUS3_V3.Controllers
         public ActionResult Buscar1(string id)
         {
             var tanda = from s in _context.TTanda select s;
-            if(!String.IsNullOrEmpty(id.ToString()))
-            {
-                tanda = tanda.Where(j => j.PkItCodTan.Equals(id));
+            //bool Istandaexist = _context.TTanda.Any
+            //  (x => x.PkItCodTan == );
+            //if (Istandaexist == false)
+            //{
+            //    ModelState.AddModelError("tanda1", "No existe tanda");
+            //}
+            if (!String.IsNullOrEmpty(id.ToString()))
+            {      
+                 tanda = tanda.Where(j => j.PkItCodTan.ToString().Contains(id));
             }
             
             return View(tanda);

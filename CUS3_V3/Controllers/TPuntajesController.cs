@@ -49,7 +49,7 @@ namespace CUS3_V3.Controllers
             {
                 _context.Add(tPuntaje);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Create));
             }
             ViewData["FkVumtCod"] = new SelectList(_context.TUsuarioModalidadTanda, "PkVumtCod", "PkVumtCod", tPuntaje.FkVumtCod);
             return View(tPuntaje);
