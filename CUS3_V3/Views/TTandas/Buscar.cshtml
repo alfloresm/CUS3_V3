@@ -6,40 +6,7 @@
 }
 
 <h2>CALIFICAR</h2>
-<div class="row">
 
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <div>
-                <h4 class="panel-title">Eleccion de Tanda</h4>
-            </div>
-        </div>
-
-        <div class="panel panel-body form-group">
-            @using (Html.BeginForm("Buscar1", "TTandas", FormMethod.Get))
-            {
-                @*<form asp-action="Buscar1">*@
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                <div class="row col-xs-12 col-md-12 col-lg-12">
-                    @*ViewData["FK_IUMT_CODTA"]*@
-                    <div class="form-group  col-xs-12 col-md-12 col-lg-6">
-                        <label class="control-label">Nº Tanda:</label>
-                        @Html.TextBox("id")
-
-                        <span class="text-danger"></span>
-                    </div>
-                    <div class="form-group  col-xs-12 col-md-12 col-lg-6">
-                        <hr />
-                        <input value="Buscar1" class="btn btn-block btn-success" />
-                        <hr />
-                    </div>
-                </div>
-                @*</form>*@
-            }
-        </div>
-    </div>
-</div>
 
 <table class="table">
     <thead>
@@ -68,7 +35,7 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="DataSearching">
 @foreach (var item in Model) {
         <tr>
             <td>
@@ -102,3 +69,24 @@
 }
     </tbody>
 </table>
+
+<script src="~/js/jquery-1.10.2.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#SearchBtn").click(function () {
+            var SearchValue = $("#id").val();
+            var SetData = $("#DataSearching");
+            SetData.html("");
+            $.ajax({
+                type: "post",
+                url: "/TTandas/Buscar1?SearchValue=" + SearchValue + "",
+                contentType:"html",
+                success=function (result) {
+
+                }
+            })
+        });
+
+    }
+    );
+</script>

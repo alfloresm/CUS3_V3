@@ -59,7 +59,7 @@
     </div>
 
     <div>
-        <a asp-action="Index">Elegir tanda</a>
+        <a asp-controller="TTandas" asp-action="Buscar">Elegir tanda</a>
     </div>
     <div class="modal" tabindex="-1" role="dialog" id="exampleModal">
         <div class="modal-dialog" role="document">
@@ -76,7 +76,11 @@
 
                         <div class="form-group">
                             <label asp-for="IpNumeroJurado" class="control-label"></label>
-                            <input asp-for="IpNumeroJurado" class="form-control" />
+                            <select id="ipnumJu" asp-for="IpNumeroJurado" class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
                             <span asp-validation-for="IpNumeroJurado" class="text-danger"></span>
                         </div>
                         <div class="form-group">
